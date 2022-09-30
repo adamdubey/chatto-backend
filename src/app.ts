@@ -1,24 +1,24 @@
-import express, { Express } from 'express'
-import { ChattoServer } from './setupServer'
-import databaseConnection from './setupDatabase'
-import { config } from './config'
+import express, { Express } from 'express';
+import { ChattoServer } from './setupServer';
+import databaseConnection from './setupDatabase';
+import { config } from './config';
 
 class Application {
-    public initialize(): void {
-        this.loadConfig()
-        databaseConnection()
+  public initialize(): void {
+    this.loadConfig();
+    databaseConnection();
 
-        const app: Express = express()
-        const server: ChattoServer = new ChattoServer(app)
+    const app: Express = express();
+    const server: ChattoServer = new ChattoServer(app);
 
-        server.start()
-    }
+    server.start();
+  }
 
-    private loadConfig(): void {
-        config.validateConfig()
-    }
+  private loadConfig(): void {
+    config.validateConfig();
+  }
 }
 
-const application: Application = new Application()
+const application: Application = new Application();
 
-application.initialize()
+application.initialize();
