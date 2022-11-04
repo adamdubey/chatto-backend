@@ -2,59 +2,45 @@
 @urlPath = api/v1
 
 ###
-GET {{baseUrl}}/{{urlPath}}/signout
+GET {{baseUrl}}/{{urlPath}}/user/following
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
 ###
-GET {{baseUrl}}/{{urlPath}}/currentuser
+GET {{baseUrl}}/{{urlPath}}/user/followers/<userId>
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
 ###
-POST {{baseUrl}}/{{urlPath}}/signup
+PUT {{baseUrl}}/{{urlPath}}/user/follow/<followerId>
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
-{
-  "username": "",
-  "password": "",
-  "email": "",
-  "avatarColor": "",
-  "avatarImage": "<add-a-base64-encoded-string>"
-}
+{}
 
 ###
-POST {{baseUrl}}/{{urlPath}}/signin
+PUT {{baseUrl}}/{{urlPath}}/user/unfollow/<followeeId>/<followerId>
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
-{
-  "username": "",
-  "password": ""
-}
+{}
 
 ###
-POST {{baseUrl}}/{{urlPath}}/forgot-password
+PUT {{baseUrl}}/{{urlPath}}/user/block/<followerId>
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
-{
-  "email": ""
-}
+{}
 
 ###
-POST {{baseUrl}}/{{urlPath}}/reset-password/<token>
+PUT {{baseUrl}}/{{urlPath}}/user/unblock/<followerId>
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
-{
-  "password": "",
-  "confirmPassword": ""
-}
+{}
