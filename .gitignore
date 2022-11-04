@@ -46,6 +46,7 @@ build/
 # Dependency directories
 node_modules/
 jspm_packages/
+package-lock.json
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -86,6 +87,7 @@ web_modules/
 .env.staging
 .env.production
 .env.local
+.DS_Store
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
