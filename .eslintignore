@@ -123,6 +123,7 @@ build
 
 # DynamoDB Local files
 .dynamodb/
+db-data
 
 # TernJS port file
 .tern-port
